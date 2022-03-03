@@ -14,6 +14,68 @@
 
 ---
 
+#### tkinter 系統檔案管理員開檔
+
+
+
+```python
+from tkinter import filedialog as fd
+
+full_path = fd.askopenfilename()
+```
+
+
+
+存檔:https://www.geeksforgeeks.org/python-asksaveasfile-function-in-tkinter/
+
+---
+
+#### os.path 分離路徑,檔案名稱 
+
+https://www.runoob.com/python/python-os-path.html
+
+```python
+import os
+
+full_path = "C:\xxxx\yyyyy\zzzz\file.bin"
+
+f_name  = os.path.basename(full_path) 
+# 取得檔案路徑 "C:\xxxx\yyyyy\zzzz"
+
+f_path  = os.path.dirname(full_path) 
+# 取得檔案名稱 "file.bin"
+    
+```
+
+
+
+---
+
+#### os.system(cmd) 在Python中執行Terminal命令
+
+cmd = "mkdir"
+
+os.system(cmd)  相當於在命令提示字元輸入mkdir 命令
+
+```python
+import os
+
+file_path = C:/Users/bill_lin/Desktop/小工具/ChecksumTool_For_12-O99-1300
+# 打開 檔案總管 瀏覽[輸出檔案目錄]
+try:
+    path = file_path
+    
+    # Windows cmd 斜線要反過來才可以正常動作
+    cmd = "explorer " + '\"' +path + '\"'
+    cmd_2 = cmd.replace('/','\\')
+	# cmd_2 =  'explorer "C:\Users\bill_lin\Desktop\小工具\ChecksumTool_For_12-O99-1300" '
+    
+    print(cmd_2)
+    os.system(cmd_2)
+except:
+    print("open explorer err!!")
+```
+
 
 
 #### Source Code
